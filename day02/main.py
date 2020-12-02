@@ -7,11 +7,13 @@ def is_valid(cond_pass):
     up_down, letter = cond.split(' ')
     down, up = up_down.split('-')
 
-    valid = int(down) <= password.count(letter) <= int(up)
+    valid = (password[int(down)] == letter and password[int(up)] != letter) or \
+            (password[int(down)] != letter and password[int(up)] == letter)
+
 
     return valid
 
 
-valid = [password for password in in_data if is_valid(password)]
+all_valid = [password for password in in_data if is_valid(password)]
 
-print(len(valid))
+print(len(all_valid))
