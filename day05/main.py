@@ -3,7 +3,6 @@ with open('input.txt', 'r') as reader:
 
 
 def get_seat(path: str) -> int:
-    print(path)
     row = list(range(0, 128))
     column = list(range(0, 8))
 
@@ -20,4 +19,8 @@ def get_seat(path: str) -> int:
     return row[0] * 8 + column[0]
 
 
-print(max([get_seat(x) for x in in_data]))
+seats = set(range(0,862))
+for x in in_data:
+    seats.remove(get_seat(x))
+
+print(seats)
