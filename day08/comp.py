@@ -26,13 +26,10 @@ class computer:
     def __check_deadloop(self):
         for i in range(1, len(self.trace) // 2 + 1):
             if self.trace[-i:] == self.trace[-2 * i:-i]:
-                print(self.history[-i])
                 raise Exception("Deadloop step back {}".format(len(self.trace) - i))
 
     def run(self):
         while True:
-
-            print(self)
 
             command = self.__get_command()
             if command[0] == 'nop':
