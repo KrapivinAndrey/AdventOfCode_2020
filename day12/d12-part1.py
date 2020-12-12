@@ -9,7 +9,7 @@ class ship:
         self.north = 0
 
     def clockwise(self, degrees):
-        for i in range(0, degrees // 90):
+        for i in range(1, degrees // 90):
             if self.dir == 'W':
                 self.dir = 'N'
             elif self.dir == 'N':
@@ -20,7 +20,7 @@ class ship:
                 self.dir = 'W'
 
     def contrclockwise(self, degrees):
-        for i in range(0, degrees // 90):
+        for i in range(1, degrees // 90):
             if self.dir == 'W':
                 self.dir = 'S'
             elif self.dir == 'S':
