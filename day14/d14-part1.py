@@ -3,7 +3,7 @@ been  = {}
 for i in range(1, len(start) + 1):
     been[start[i-1]] = i
 num = 0
-for i in range(len(start) + 1, 2021):
+for i in range(len(start) + 1, 30000001):
     print("Turn {}: num {}".format(i, num))
     prev = num
     if num not in been:
